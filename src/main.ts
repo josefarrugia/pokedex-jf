@@ -5,33 +5,19 @@
  */
 
 // Plugins
-import { registerPlugins } from '@/plugins'
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import {registerPlugins} from '@/plugins'
+import apolloClient from "../apollo-client";
 
-// HTTP connection to the API
-const httpLink = createHttpLink({
-  // You should use an absolute URL here
-  uri: 'https://beta.pokeapi.co/graphql/v1beta',
-})
-
-// Cache implementation
-const cache = new InMemoryCache()
-
-// Create the apollo client
-const apolloClient = new ApolloClient({
-  link: httpLink,
-  cache,
-})
 
 // Components
 import App from './App.vue'
 
 // Composables
-import { createApp, provide, h } from 'vue'
-import { DefaultApolloClient } from '@vue/apollo-composable'
+import {createApp, provide, h} from 'vue'
+import {DefaultApolloClient} from '@vue/apollo-composable'
 
 const app = createApp({
-  setup () {
+  setup() {
     provide(DefaultApolloClient, apolloClient)
   },
 
