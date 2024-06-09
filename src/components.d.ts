@@ -7,11 +7,11 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppDialog: (typeof import("./components/AppLayout/AppDialog.vue"))["default"];
-    AppFooter: (typeof import("./components/AppLayout/AppFooter.vue"))["default"];
-    AppHeader: (typeof import("./components/AppLayout/AppHeader.vue"))["default"];
-    PokemonType: (typeof import("./components/PokemonType.vue"))["default"];
-    RouterLink: (typeof import("vue-router"))["RouterLink"];
-    RouterView: (typeof import("vue-router"))["RouterView"];
+    AppDialog: typeof import('./components/AppLayout/AppDialog.vue')['default']
+    AppFooter: typeof import('./components/AppLayout/AppFooter.vue')['default']
+    AppHeader: typeof import('./components/AppLayout/AppHeader.vue')['default']
+    PokemonType: typeof import('./components/PokemonType.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }
