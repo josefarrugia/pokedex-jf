@@ -2,8 +2,12 @@
 
 ## Description
 
+![pokedex-homepage.jpg](/docs/pokedex-homepage.png)
+
 This is a Pokedex Explorer where you can browse through a list of Pokemon, view detailed information and stats of each
 Pokemon, add them to your favourites and filter/search by the name of the Pokemon or by their type.
+
+View Pokedex Explorer: https://pokedex-explorer-jf.netlify.app
 
 ## ✨ Features
 
@@ -27,7 +31,7 @@ Pokemon, add them to your favourites and filter/search by the name of the Pokemo
 - [ ] Pinia Persist Storage for Favourites
 - [ ] Fix `console warning` messages
 - [ ] Improve GQL implementation with codegen generation
-- [ ] Add more TypeScript types
+- [ ] Add more TypeScript types and fix current issues
 
 ## 💿 Install
 
