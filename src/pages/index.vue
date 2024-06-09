@@ -3,7 +3,7 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useAppStore } from "@/stores/app";
 import { useRouter } from "vue-router";
-import { PokemonType } from "@/types/PokemonType.interface";
+import type { PokemonType } from "@/types/PokemonType.interface";
 
 const store = useAppStore();
 const router = useRouter();
@@ -193,6 +193,7 @@ watch(currentPage, (currentPage) => {
                   >
                     {{ type }}
                   </v-chip>
+                  <PokemonType>hello</PokemonType>
                 </div>
                 <v-btn
                   @click="filterTypePokemon = ''"
