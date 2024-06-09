@@ -3,6 +3,7 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useAppStore } from "@/stores/app";
 import { useRouter } from "vue-router";
+import { PokemonType } from "@/types/PokemonType.interface";
 
 const store = useAppStore();
 const router = useRouter();
@@ -121,22 +122,19 @@ const totalPokemon = computed(() => {
   return Number(result.value?.info?.totalPokemon?.count);
 });
 const pokemonTypes = computed(() => {
-  const types = result.value?.types?.map((type) => type.pokemon_v2_type.name);
+  const types = result.value?.types?.map(
+    (type: PokemonType) => type.pokemon_v2_type.name,
+  );
   return [...new Set(types)];
 });
 
-const loadItems = (event) => {
-  currentPage.value = event.page;
-  itemsPerPage.value = event.itemsPerPage;
-};
-
-const getPokemonAvatar = (sprite) => {
-  if (!sprite) return null;
-  return sprite[0].sprites.other.home.front_shiny;
+const loadItems = (options: any) => {
+  currentPage.value = options.page;
+  itemsPerPage.value = options.itemsPerPage;
 };
 
 const handleFilterPokemonType = (type: string) => {
-  filterTypePokemon.value = type;
+  filterTypePokemon.value = type as string;
 };
 
 const handleAddFavourite = (pokemonId: number, name: string) => {
@@ -146,7 +144,8 @@ const handleAddFavourite = (pokemonId: number, name: string) => {
   store.addFavourite(pokemonId, name);
 };
 
-const handleRowClick = (event, row) => {
+const handleRowClick = (event: Event, row) => {
+  console.log(row);
   const pokemonId = row.item.id;
 
   router.push({ name: "/pokemon/[id]", params: { id: pokemonId } });
@@ -189,7 +188,7 @@ watch(currentPage, (currentPage) => {
                     v-for="(type, index) in pokemonTypes"
                     :key="index"
                     variant="outlined"
-                    @click="handleFilterPokemonType(type)"
+                    @click="handleFilterPokemonType(type as string)"
                     :class="[{ 'bg-blue': type === filterTypePokemon }]"
                   >
                     {{ type }}
@@ -229,7 +228,9 @@ watch(currentPage, (currentPage) => {
             <span class="text-capitalize">{{ value }}</span>
           </template>
           <template v-slot:item.avatar="{ value }">
-            <v-avatar :image="getPokemonAvatar(value)"></v-avatar>
+            <v-avatar
+              :image="value[0].sprites.other.home.front_shiny"
+            ></v-avatar>
           </template>
           <template v-slot:item.types="{ value }">
             <td class="d-flex flex-wrap ga-2">
