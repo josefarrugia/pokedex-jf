@@ -1,13 +1,14 @@
 <template>
   <v-app>
-    <v-main>
-      <router-view />
-    </v-main>
+    <v-layout>
+      <AppHeader/>
 
-    <AppFooter />
+      <v-main>
+        <router-view/>
+      </v-main>
+
+    </v-layout>
+
+    <AppDialog/>
   </v-app>
 </template>
-
-<script lang="ts" setup>
-  //
-</script>
