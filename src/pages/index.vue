@@ -19,7 +19,7 @@ const tableHeaders = ref([
     title: "ID",
     align: "start",
     key: "id",
-    sortable: true,
+    sortable: false,
   },
   {
     title: "Avatar",
@@ -29,7 +29,7 @@ const tableHeaders = ref([
   {
     title: "Name",
     key: "name",
-    sortable: true,
+    sortable: false,
   },
   {
     title: "Types",
@@ -69,6 +69,7 @@ const GET_POKEMON = gql`
     }
 
     pokemon: pokemon_v2_pokemon_aggregate(
+      order_by: { id: asc }
       where: {
         name: { _ilike: $name }
         pokemon_v2_pokemontypes: {
