@@ -184,16 +184,14 @@ watch(currentPage, (currentPage) => {
             <template v-slot:text>
               <div class="d-flex flex-column ga-4">
                 <div class="d-flex flex-wrap ga-2 justify-center">
-                  <v-chip
+                  <PokemonType
                     v-for="(type, index) in pokemonTypes"
                     :key="index"
-                    variant="outlined"
                     @click="handleFilterPokemonType(type as string)"
                     :class="[{ 'bg-blue': type === filterTypePokemon }]"
                   >
                     {{ type }}
-                  </v-chip>
-                  <PokemonType>hello</PokemonType>
+                  </PokemonType>
                 </div>
                 <v-btn
                   @click="filterTypePokemon = ''"
@@ -235,17 +233,14 @@ watch(currentPage, (currentPage) => {
           </template>
           <template v-slot:item.types="{ value }">
             <td class="d-flex flex-wrap ga-2">
-              <v-chip
+              <PokemonType
                 v-for="item in value"
                 :key="item.id"
-                variant="outlined"
                 size="small"
                 :ripple="false"
-                label
                 :disabled="false"
-              >
-                {{ item.type.name }}
-              </v-chip>
+                >{{ item.type.name }}
+              </PokemonType>
             </td>
           </template>
 
