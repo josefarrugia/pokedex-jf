@@ -7,9 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AppDialog: (typeof import("./components/AppDialog.vue"))["default"];
-    AppFooter: (typeof import("./components/AppFooter.vue"))["default"];
-    AppHeader: (typeof import("./components/AppHeader.vue"))["default"];
+    AppDialog: (typeof import("./components/AppLayout/AppDialog.vue"))["default"];
+    AppFooter: (typeof import("./components/AppLayout/AppFooter.vue"))["default"];
+    AppHeader: (typeof import("./components/AppLayout/AppHeader.vue"))["default"];
     PokemonType: (typeof import("./components/PokemonType.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
