@@ -140,17 +140,16 @@ watch(
             <v-list lines="two">
               <v-list-subheader>Types</v-list-subheader>
               <div class="d-flex ml-4 ga-2">
-                <v-chip
+                <PokemonType
                   v-for="item in getPokemon.types"
                   :key="item.id"
                   variant="outlined"
                   size="small"
                   :ripple="false"
-                  label
                   :disabled="false"
                 >
                   {{ item.type.name }}
-                </v-chip>
+                </PokemonType>
               </div>
             </v-list>
 
