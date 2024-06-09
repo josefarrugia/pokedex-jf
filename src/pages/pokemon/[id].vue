@@ -2,8 +2,10 @@
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useRoute } from "vue-router";
+import { useAppStore } from "@/stores/app";
 
 const route = useRoute();
+const store = useAppStore();
 
 const pokemonId = ref(0);
 const tab = ref(null);
@@ -109,6 +111,13 @@ watch(
 <template>
   <v-container>
     <v-card v-if="getPokemon" class="mx-auto" max-width="400">
+      <template v-slot:append>
+        <v-icon
+          color="red"
+          icon="mdi-heart"
+          @click="store.addFavourite(getPokemon.id, getPokemon.name)"
+        ></v-icon>
+      </template>
       <div class="d-flex justify-center">
         <v-avatar
           :image="getPokemonAvatar"
