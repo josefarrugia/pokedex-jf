@@ -145,7 +145,6 @@ const handleAddFavourite = (pokemonId: number, name: string) => {
 };
 
 const handleRowClick = (event: Event, row) => {
-  console.log(row);
   const pokemonId = row.item.id;
 
   router.push({ name: "/pokemon/[id]", params: { id: pokemonId } });
