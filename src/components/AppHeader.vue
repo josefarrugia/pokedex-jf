@@ -30,5 +30,4 @@ const drawer = ref(false);
                    :to="{ name: '/pokemon/favourites'}"></v-list-item>
     </v-list>
   </v-navigation-drawer>
-
 </template>
