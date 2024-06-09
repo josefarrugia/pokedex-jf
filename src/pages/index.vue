@@ -3,7 +3,6 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useAppStore } from "@/stores/app";
 import { useRouter } from "vue-router";
-import convertGqlOrderBy from "@/utils/convert-gql-order-by";
 
 const store = useAppStore();
 const router = useRouter();
@@ -15,7 +14,6 @@ const currentPage = ref(0);
 const search = ref("");
 const name = ref("");
 const filterTypePokemon = ref("");
-const sortBy = ref([]);
 const tableHeaders = ref([
   {
     title: "ID",
@@ -127,11 +125,8 @@ const pokemonTypes = computed(() => {
 });
 
 const loadItems = (event) => {
-  sortBy.value = event.sortBy;
   currentPage.value = event.page;
   itemsPerPage.value = event.itemsPerPage;
-
-  console.log(convertGqlOrderBy(sortBy.value));
 };
 
 const getPokemonAvatar = (sprite) => {
