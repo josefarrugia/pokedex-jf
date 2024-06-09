@@ -1,14 +1,13 @@
 <template>
   <v-app>
     <v-layout>
-      <AppHeader/>
+      <AppHeader />
 
       <v-main>
-        <router-view/>
+        <router-view />
       </v-main>
-
     </v-layout>
 
-    <AppDialog/>
+    <AppDialog />
   </v-app>
 </template>
