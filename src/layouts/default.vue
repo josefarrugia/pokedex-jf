@@ -9,5 +9,6 @@
     </v-layout>
 
     <AppDialog />
+    <AppFooter />
   </v-app>
 </template>
