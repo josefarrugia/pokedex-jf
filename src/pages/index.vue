@@ -209,7 +209,14 @@ watch(currentPage, (currentPage) => {
       <v-col cols="12" lg="8" xl="9">
         <!-- @FIXME: Find out how to remove console warning message -->
         <v-data-table-server
+          class="mb-4"
           :items-per-page="itemsPerPage"
+          :items-per-page-options="[
+            { value: 10, title: '10' },
+            { value: 25, title: '25' },
+            { value: 50, title: '50' },
+            { value: 100, title: '100' },
+          ]"
           :headers="tableHeaders"
           :items="pokemonItems ?? []"
           :items-length="totalPokemon ?? 0"
