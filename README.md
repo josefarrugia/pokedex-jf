@@ -56,7 +56,7 @@ To start the development server with hot-reload, run the following command. The 
 at [http://localhost:3000](http://localhost:3000):
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 (Repeat for npm, pnpm, and bun with respective commands.)
