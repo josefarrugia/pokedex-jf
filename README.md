@@ -22,7 +22,7 @@ View Pokedex Explorer: https://pokedex-explorer-jf.netlify.app
 
 1. [Use of Vuetify for UI/UX](https://vuetifyjs.com/en/)
 2. [Pinia for State Management](https://pinia.vuejs.org/)
-3. [Vue 3](https://vuejs.org/)(https://vuejs.org/)
+3. [Vue 3](https://vuejs.org/)
 4. [Prettier to make the code looking pretty](https://prettier.io/)
 
 ## 🔮 Future Features and Wishes
