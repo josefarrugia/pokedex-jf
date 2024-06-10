@@ -3,7 +3,7 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useAppStore } from "@/stores/app";
 import { useRouter } from "vue-router";
-import type { PokemonType } from "@/types/PokemonType.interface";
+import type { PokemonTypeInterface } from "@/types/PokemonType.interface";
 
 const store = useAppStore();
 const router = useRouter();
@@ -123,7 +123,7 @@ const totalPokemon = computed(() => {
 });
 const pokemonTypes = computed(() => {
   const types = result.value?.types?.map(
-    (type: PokemonType) => type.pokemon_v2_type.name,
+    (type: PokemonTypeInterface) => type.pokemon_v2_type.name,
   );
   return [...new Set(types)];
 });
