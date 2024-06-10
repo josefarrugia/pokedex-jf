@@ -207,7 +207,6 @@ watch(currentPage, (currentPage) => {
       </v-col>
 
       <v-col cols="12" lg="8" xl="9">
-        <!-- @FIXME: Find out how to remove console warning message -->
         <v-data-table-server
           class="mb-4"
           :items-per-page="itemsPerPage"

@@ -29,9 +29,8 @@ View Pokedex Explorer: https://pokedex-explorer-jf.netlify.app
 
 - [ ] Sort data by column
 - [ ] Pinia Persist Storage for Favourites
-- [ ] Fix `console warning` messages
 - [ ] Improve GQL implementation with codegen generation
-- [ ] Add more TypeScript types and fix current issues
+- [ ] Add more TypeScript types
 
 ## 💿 Install
 
